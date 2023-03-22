@@ -6,7 +6,6 @@ Created on Thu Mar  9 11:32:28 2023
 
 This file is intended to compare our Method from OT vs EnKF in the survey paper 
 "Ensemble Kalman Methods: A Mean Field Perspective" 
-using the Lorenz 96 Singlescale example in the survey paper.
 
 The 1D system model is
     x(n+1) = A(x(n)) + sai(n) , sai ~ N(0,sigma^2 I)
