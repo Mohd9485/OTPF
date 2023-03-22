@@ -4,8 +4,7 @@
 Created on Tue Mar 21 15:10:38 2023
 
 This file is intended to compare our Method from OT vs EnKF in the survey paper 
-"Ensemble Kalman Methods: A Mean Field Perspective" 
-using the Lorenz 96 Singlescale example in the survey paper.
+"Ensemble Kalman Methods: A Mean Field Perspective" vs SIR particle filter.
 
 The 1D system model is
     x(n+1) = A(x(n)) + sai(n) , sai ~ N(0,sigma^2 I)
