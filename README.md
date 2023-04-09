@@ -1,6 +1,16 @@
-# Optimal Transport Particle Filters
+# Optimal Transport Particle Filters (OTPFs)
 
 This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhosseini.org/), [Amirhossein Taghvaei](https://www.aa.washington.edu/facultyfinder/amir-taghvaei) and contains the Pytorch source code to reproduce the experiments in our 2023 paper [Optimal Transport Particle Filters](https://arxiv.org/abs/2304.00392).
+
+To illustrate the proposed OTPF in comparison with two other filters: the Ensemble Kalman Filter (EnKF),
+and the sequential importance resampling (SIR) PF, we are using the following model:
+$
+\begin{align}
+    X_{t} &= (1-\alpha) X_{t-1} + 2\sigma V_t,\quad X_0 \sim \mathcal{N}(0,I_n)\\
+    Y_t &= h(X_t) + \sigma W_t
+\end{align}
+$
+
 
 <p align="center">
 <img src="/images/X.png" width="250" height="250"><img src="/images/XX.png" width="250" height="250"><img src="/images/XXX.png" width="250" height="250">
