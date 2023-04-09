@@ -11,14 +11,14 @@ This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhossei
 
 Please consider citing our paper if you find this repository useful for your publication.
 
-'''
+```
 @article{al2023optimal,
   title={Optimal Transport Particle Filters},
   author={Al-Jarrah, Mohammad and Hosseini, Bamdad and Taghvaei, Amirhossein},
   journal={arXiv preprint arXiv:2304.00392},
   year={2023}
 }
-'''
+```
 
 ## Setup
 * Python/Numpy
