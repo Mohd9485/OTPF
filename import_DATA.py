@@ -18,11 +18,12 @@ def relu(x):
     a = 0
     return np.maximum(x,a)
 
-#This is the data with using normalization in the training and testing
-#load = np.load('DATA_File_Linaer_X_100_simulations.npz') # h(x) = x
-#load = np.load('DATA_File_NonLinaer_XX_100_simulations.npz') # h(x) = x^2 
-load = np.load('DATA_File_NonLinaer_XXX_100_simulations.npz') # h(x) = x^3
-
+## This is the data with using normalization in the training and testing
+# load = np.load('DATA_file_Linaer_X_100_simulations.npz') # h(x) = x
+# load = np.load('DATA_file_NonLinaer_XX_100_simulations.npz') # h(x) = x^2 
+# load = np.load('DATA_file_NonLinaer_XXX_100_simulations.npz') # h(x) = x^3
+ 
+load = np.load('DATA_file.npz') # h(x) = x^3
 
 
 data = {}
@@ -138,16 +139,16 @@ Performance_mse_SIR = ((relu(X_SIR).mean(axis = 3) - relu(X_true))**2).mean(axis
 # =============================================================================
 #%%
 l = 0
-j=88 # 88
+j=0 # 88
 plt.figure()
 plt.subplot(3,1,1)
 for i in range(J):
     plt.plot(time,X_EnKF[j,:,l,i],'C0',alpha = 0.1)
 plt.plot(time,X_true[j,:,l],'k--',label = 'True state')
-#plt.xlabel('time')
-#plt.ylabel('EnKF')
-#plt.title('h($X_t) = X^2_t$') # Change this %%%%%%%%%%%%%%%%%%%%%%%%%%
-#plt.legend()
+plt.xlabel('time')
+plt.ylabel('EnKF')
+#plt.title('State$') # Change this %%%%%%%%%%%%%%%%%%%%%%%%%%
+plt.legend()
 plt.show()
 
 #plt.figure()
@@ -156,9 +157,9 @@ plt.subplot(3,1,2)
 for i in range(SAMPLE_SIZE):
     plt.plot(time,X_OT[j,:,l,i],'C0',alpha = 0.1)
 plt.plot(time,X_true[j,:,l],'k--',alpha=1)
-#plt.xlabel('time')
-#plt.ylabel('OT')
-#plt.legend()
+plt.xlabel('time')
+plt.ylabel('OT')
+plt.legend()
 plt.show()
 
 plt.subplot(3,1,3)
@@ -167,8 +168,8 @@ for i in range(SAMPLE_SIZE):
     plt.plot(time,X_SIR[j,:,l,i],'C0',alpha = 0.1)
 plt.plot(time,X_true[j,:,l],'k--',alpha=1)
 plt.xlabel('time')
-#plt.ylabel('SIR')
-#plt.legend()
+plt.ylabel('SIR')
+plt.legend()
 plt.show()
 
 #plt.savefig('NonLinearState_XX.pdf') # Change this %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,8 +182,8 @@ plt.semilogy(time,MSE_OT,'r-.',label="OT" )
 plt.semilogy(time,MSE_SIR,'b:',label="SIR" )
 plt.xlabel('time')
 plt.ylabel('mse')
-#plt.title('Log-MSE')
-#plt.legend()
+plt.title('Log-MSE')
+plt.legend()
 plt.show()
 #plt.savefig('NonLinearMSE_XXX.pdf') # Change this %%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -199,8 +200,8 @@ plt.plot(time,Performance_mse_OT,'r-.',label="OT" )
 plt.plot(time,Performance_mse_SIR,'b:',label="SIR" )
 plt.xlabel('time')
 plt.ylabel('mse')
-#plt.title('Performance Test')
-#plt.legend()
+plt.title('mse=max(0,X)')
+plt.legend()
 plt.show()
 #plt.savefig('NonLinearPerformance_XX.pdf') # Change this %%%%%%%%%%%%%%%%%%%%%%%%%%
 
