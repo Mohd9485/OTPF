@@ -6,7 +6,7 @@ This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhossei
 <img src="/images/X.png" width="250" height="250"><img src="/images/XX.png" width="250" height="250"><img src="/images/XXX.png" width="250" height="250">
 </p>
 
-If you find this repository useful for your publication, please consider citing our paprt.
+Please consider citing our paper if you find this repository useful for your publication.
 '''
 @article{al2023optimal,
   title={Optimal Transport Particle Filters},
@@ -17,15 +17,16 @@ If you find this repository useful for your publication, please consider citing 
 '''
 
 ## Setup
-* Python/numpy
+* Python/Numpy
 * PyTorch
 
-## Running the code and Regenerate data and figures.
+## Running the code and Regenerating data and figures.
 1. Run the 'main.py' file to regenerate and save the date. There are multiple things you can change in the code:
   - The observation function 'h(x)', please use the desired observation function here.
-  - The number of sumlations 'AVG_SIM', we used 100 simulations in our paper but you can change that to a smaller number to get faster results.
-  - The number final number of iterations 'parameters['Final_Number_ITERATION']' 
-  - Other parameter to choose like the noise level, the number of particle 'J',..., etc.
-2. Use the file 'import_DATA.py' to import and plot all the desired figures. Note here, we will plot the 'mse' for both $\phi(X)=X$ and $\phi(X)=max(0,X)$.
-  
+  - The number of simulations 'AVG_SIM', we used 100 simulations in our paper, but you can change that to a smaller number to get faster results.
+  - The number final number of iterations 'parameters['Final_Number_ITERATION']'.
+  - Other parameters to choose from like the noise level, the number of particles 'J',..., etc.
+2. Use the file 'import_DATA.py' to import and plot all the desired figures. Note here that we will plot the 'mse' for both $\phi(X)=X$ and $\phi(X)=max(0,X)$.
+
+Note: Unfortunately, we ran a random seed every time we ran the code, so we do not have a seed function to provide identical results to our paper, but the figure should be close enough.
 
