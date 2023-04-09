@@ -20,5 +20,9 @@ If you find this repository useful for your publication, please consider citing 
 * Python/numpy
 * PyTorch
 
-## Running the code and Regenerate figures.
+## Running the code and Regenerate data and figures.
+1. Run the 'main.py' file to regenerate and save the date. There are multiple things you can change in the code:
+  - The number of sumlations 'AVG_SIM', we used 100 simulations in our paper but you can change that to a smaller number to get faster results.
+  - The 
+2.   
 
