@@ -8,7 +8,9 @@ This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhossei
 <p align="center">
 <img src="/images/mse_X.png" width="250" height="250"><img src="/images/mse_XX.png" width="250" height="250"><img src="/images/mse_XXX.png" width="250" height="250">
 </p>
+
 Please consider citing our paper if you find this repository useful for your publication.
+
 '''
 @article{al2023optimal,
   title={Optimal Transport Particle Filters},
