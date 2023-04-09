@@ -26,6 +26,6 @@ If you find this repository useful for your publication, please consider citing 
   - The number of sumlations 'AVG_SIM', we used 100 simulations in our paper but you can change that to a smaller number to get faster results.
   - The number final number of iterations 'parameters['Final_Number_ITERATION']' 
   - Other parameter to choose like the noise level, the number of particle 'J',..., etc.
-2. Use the file 'import_DATA.py' to import and plot all the desired figures. Note here, we will plot the 'mse' for both $\phi{x}=x$ and $\phi{x}=max(0,x)$.
+2. Use the file 'import_DATA.py' to import and plot all the desired figures. Note here, we will plot the 'mse' for both $\phi(X)=X$ and $\phi(X)=max(0,X)$.
   
 
