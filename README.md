@@ -5,12 +5,12 @@ This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhossei
 To illustrate the proposed OTPF in comparison with two other filters: the Ensemble Kalman Filter (EnKF),
 and the sequential importance resampling (SIR) PF, we are using the following model:
 
-$
+$$
 \begin{aligned}
     X_{t} &= (1-\alpha) X_{t-1} + 2\sigma V_t,\quad X_0 \sim \mathcal{N}(0,I_n)\\
     Y_t &= h(X_t) + \sigma W_t
 \end{aligned}
-$
+$$
 
 
 <p align="center">
