@@ -11,12 +11,15 @@ $$
     Y_t &= h(X_t) + \sigma W_t
 \end{aligned}
 $$
+
 for $t=1,2,3,\ldots$, where $X_t,Y_t \in \mathbb R^n$, $\{V_t\}_{t=1}^\infty$ and $\{W_t\}_{t=1}^\infty$ are i.i.d sequences of $n$-dimensional standard Gaussian random variables, $\alpha=0.1$ and $\sigma=\sqrt{0.1}$. We use three observation functions:
+
 $$
 \begin{aligned}
     h(x)=x,\quad h(x)=x \odot x,\quad h(x)=x \odot x \odot x
 \end{aligned}
 $$
+
 where $\odot$ denotes the element-wise (i.e., Hadamard) product when $x$ is a vector.
 
 <p align="center">
