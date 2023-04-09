@@ -1,6 +1,6 @@
 # Optimal Transport Particle Filters (OTPFs)
 
-This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhosseini.org/), [Amirhossein Taghvaei](https://www.aa.washington.edu/facultyfinder/amir-taghvaei) and contains the Pytorch source code to reproduce the experiments in our 2023 paper [Optimal Transport Particle Filters](https://arxiv.org/abs/2304.00392).
+This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhosseini.org/), [Amirhossein Taghvaei](https://www.aa.washington.edu/facultyfinder/amir-taghvaei) and contains the Pytorch source code to reproduce the experiments in our 2023 paper [Optimal Transport Particle Filters](https://arxiv.org/abs/2304.00392). 
 
 To illustrate the proposed OTPF in comparison with two other filters: the Ensemble Kalman Filter (EnKF),
 and the sequential importance resampling (SIR) PF, we are using the following model:
@@ -29,7 +29,7 @@ where $\odot$ denotes the element-wise (i.e., Hadamard) product when $x$ is a ve
 <img src="/images/mse_X.png" width="250" height="250"><img src="/images/mse_XX.png" width="250" height="250"><img src="/images/mse_XXX.png" width="250" height="250">
 </p>
 
-Please consider citing our paper if you find this repository useful for your publication.
+Please consider reading the paper for further details on this example. Also, please consider citing our paper if you find this repository useful for your publication.
 
 ```
 @article{al2023optimal,
