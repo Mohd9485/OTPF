@@ -22,7 +22,10 @@ If you find this repository useful for your publication, please consider citing 
 
 ## Running the code and Regenerate data and figures.
 1. Run the 'main.py' file to regenerate and save the date. There are multiple things you can change in the code:
+  - The observation function 'h(x)', please use the desired observation function here.
   - The number of sumlations 'AVG_SIM', we used 100 simulations in our paper but you can change that to a smaller number to get faster results.
-  - The number final number of iterations 'parameters['Final_Number_ITERATION']'
-2.   
+  - The number final number of iterations 'parameters['Final_Number_ITERATION']' 
+  - Other parameter to choose like the noise level, the number of particle 'J',..., etc.
+2. Use the file 'import_DATA.py' to import and plot all the desired figures. Note here, we will plot the 'mse' for both $\phi{x}=x$ and $\phi{x}=max(0,x)$.
+  
 
