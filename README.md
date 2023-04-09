@@ -2,6 +2,7 @@
 
 This repository is by Mohammad Al-Jarrah, [Bamdad Hosseini](https://bamdadhosseini.org/), [Amirhossein Taghvaei](https://www.aa.washington.edu/facultyfinder/amir-taghvaei) and contains the Pytorch source code to reproduce the experiments in our 2023 paper [Optimal Transport Particle Filters](https://arxiv.org/abs/2304.00392).
 
+<img src="/images/X.png" width="100" height="100">
 ![](/images/X.png | width=100)
 ![](/images/XX.png)
 ![](/images/XXX.png)
