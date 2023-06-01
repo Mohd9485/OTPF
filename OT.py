@@ -154,7 +154,7 @@ def OT(X,Y,X0_cost,parameters,A,h,noise=np.sqrt(1e-1)):
                 map_T = T.forward(X_train,Y_shuffled)
                 f_of_map_T= f.forward(map_T,Y_shuffled) 
                 #grad_f_of_map_T = torch.autograd.grad(f_of_map_T.sum(),map_T,create_graph=True)[0]
-                loss_T = f_of_map_T.mean() - (X_train*map_T).mean()
+                loss_T = f_of_map_T.mean() - (X_train*map_T).sum(axis=1).mean()
                 optimizer_T.zero_grad()
                 loss_T.backward()
                 optimizer_T.step()
@@ -166,14 +166,16 @@ def OT(X,Y,X0_cost,parameters,A,h,noise=np.sqrt(1e-1)):
             optimizer_f.zero_grad()
             loss_f.backward()
             optimizer_f.step()
-            loss = loss_f + (X_train*map_T).mean()
-            
-            if  (i+1)==iterations or i%50==0:
-                #print(g.W.data)
-                print("Simu#%d/%d ,Time Step:%d/%d, Iteration: %d/%d, loss = %.4f" %(k+1,K,ts,Ts-1,i+1,iterations,loss.item()))
-                
+
             with torch.no_grad():
                 f.layer.weight = torch.nn.parameter.Parameter(nn.functional.relu(f.layer.weight))
+                loss = loss_f + (X_train*map_T).sum(axis=1).mean()
+                if  (i+1)==iterations or i%50==0:
+                    #print(g.W.data)
+                    print("Simu#%d/%d ,Time Step:%d/%d, Iteration: %d/%d, loss = %.4f" 
+                          %(k+1,K,ts,Ts-1,i+1,iterations,loss.item()))
+                
+            
              
             scheduler_f.step()
             scheduler_T.step()
