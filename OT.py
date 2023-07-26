@@ -140,8 +140,9 @@ def OT(X,Y,X0_cost,parameters,A,h,noise=np.sqrt(1e-1)):
     # =============================================================================
        
         inner_iterations = 10
+        Y_Train_shuffled = Y_Train[torch.randperm(Y_Train.shape[0])].view(Y_Train.shape)
         for i in range(iterations):
-            idx = torch.randperm(X1.shape[0])[:batch_size]
+            idx = torch.randperm(X_Train.shape[0])[:batch_size]
             #X_train = torch.tensor(X_Train[idx])
             #Y_train = torch.tensor(Y_Train[idx])
             X_train = X_Train[idx].clone().detach()
@@ -169,8 +170,12 @@ def OT(X,Y,X0_cost,parameters,A,h,noise=np.sqrt(1e-1)):
 
             with torch.no_grad():
                 f.layer.weight = torch.nn.parameter.Parameter(nn.functional.relu(f.layer.weight))
-                loss = loss_f + (X_train*map_T).sum(axis=1).mean()
                 if  (i+1)==iterations or i%50==0:
+                    f_of_xy = f.forward(X_Train,Y_Train) 
+                    map_T = T.forward(X_Train,Y_Train_shuffled)
+                    f_of_map_T= f.forward(map_T,Y_Train_shuffled) 
+                    loss_f =f_of_xy.mean() - f_of_map_T.mean()
+                    loss = loss_f + (X_Train*map_T).sum(axis=1).mean()
                     #print(g.W.data)
                     print("Simu#%d/%d ,Time Step:%d/%d, Iteration: %d/%d, loss = %.4f" 
                           %(k+1,K,ts,Ts-1,i+1,iterations,loss.item()))
